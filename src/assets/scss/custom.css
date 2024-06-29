@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Dancing+Script:wght@400..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+.body {
+  background-color: #f8f7f0 !important;
+}
+
+.food-set {
+  width: 100px;
+  height: 112px;
+  left: 5%;
+  top: 40%;
+  position: absolute;
+}
+
+.leaf-set {
+  right: 10%;
+  top: 8%;
+  position: absolute;
+}
+.leaf-set img {
+  width: 70px;
+}
+
+.light-title {
+  font-size: 100px;
+  letter-spacing: 4.5px;
+  margin-bottom: -40px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Dancing Script", cursive;
+  line-height: 120px;
+  color: #ebebeb;
+}
+
+.box-shadow {
+  -ms-box-shadow: 0px 8px 16px 0px rgba(76, 128, 178, 0.1);
+  -o-box-shadow: 0px 8px 16px 0px rgba(76, 128, 178, 0.1);
+  box-shadow: 0px 8px 16px 0px rgba(76, 128, 178, 0.1);
+}
+
+.card-1 {
+  box-shadow: 0px 8px 16px 0px rgba(76, 128, 178, 0.1);
+}
+
+.card {
+  position: relative;
+  box-shadow: 0px 8px 16px 0px rgba(76, 128, 178, 0.1);
+}
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  z-index: -1;
+  -webkit-clip-path: polygon(6.726% 0%, 93.274% 0%, 93.274% 0%, 94.364% 0.14%, 95.399% 0.545%, 96.364% 1.192%, 97.245% 2.061%, 98.029% 3.129%, 98.701% 4.373%, 99.249% 5.772%, 99.657% 7.303%, 99.912% 8.945%, 100% 10.676%, 100% 61.278%, 100% 61.278%, 99.732% 65.983%, 98.988% 69.483%, 97.863% 71.995%, 96.447% 73.739%, 94.835% 74.934%, 93.119% 75.798%, 91.39% 76.552%, 89.742% 77.413%, 88.268% 78.601%, 87.061% 80.335%, 87.061% 80.335%, 86.147% 82.63%, 85.483% 85.137%, 84.946% 87.749%, 84.409% 90.359%, 83.749% 92.86%, 82.839% 95.146%, 81.556% 97.11%, 79.775% 98.644%, 77.369% 99.643%, 74.215% 100%, 6.726% 100%, 6.726% 100%, 5.637% 99.861%, 4.603% 99.457%, 3.638% 98.811%, 2.758% 97.944%, 1.974% 96.879%, 1.302% 95.638%, 0.754% 94.241%, 0.346% 92.712%, 0.09% 91.071%, 0% 89.342%, 0% 10.676%, 0% 10.676%, 0.088% 8.945%, 0.343% 7.303%, 0.751% 5.772%, 1.299% 4.373%, 1.971% 3.129%, 2.755% 2.061%, 3.636% 1.192%, 4.601% 0.545%, 5.636% 0.14%, 6.726% 0%);
+          clip-path: polygon(6.726% 0%, 93.274% 0%, 93.274% 0%, 94.364% 0.14%, 95.399% 0.545%, 96.364% 1.192%, 97.245% 2.061%, 98.029% 3.129%, 98.701% 4.373%, 99.249% 5.772%, 99.657% 7.303%, 99.912% 8.945%, 100% 10.676%, 100% 61.278%, 100% 61.278%, 99.732% 65.983%, 98.988% 69.483%, 97.863% 71.995%, 96.447% 73.739%, 94.835% 74.934%, 93.119% 75.798%, 91.39% 76.552%, 89.742% 77.413%, 88.268% 78.601%, 87.061% 80.335%, 87.061% 80.335%, 86.147% 82.63%, 85.483% 85.137%, 84.946% 87.749%, 84.409% 90.359%, 83.749% 92.86%, 82.839% 95.146%, 81.556% 97.11%, 79.775% 98.644%, 77.369% 99.643%, 74.215% 100%, 6.726% 100%, 6.726% 100%, 5.637% 99.861%, 4.603% 99.457%, 3.638% 98.811%, 2.758% 97.944%, 1.974% 96.879%, 1.302% 95.638%, 0.754% 94.241%, 0.346% 92.712%, 0.09% 91.071%, 0% 89.342%, 0% 10.676%, 0% 10.676%, 0.088% 8.945%, 0.343% 7.303%, 0.751% 5.772%, 1.299% 4.373%, 1.971% 3.129%, 2.755% 2.061%, 3.636% 1.192%, 4.601% 0.545%, 5.636% 0.14%, 6.726% 0%);
+}
+
+header {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
+  padding: 20px 0;
+  background: #008a4b;
+}
+header .right-side h6 {
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 2.5px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Dancing Script", cursive;
+}
+header .left-side img {
+  width: 150px;
+  /* filter: brightness(0) invert(1); */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Spline Sans", sans-serif;
+}
+
+.detail-box h6 {
+  font-family: "Public Sans", sans-serif !important;
+}
+
+body {
+  font-family: "Public Sans", sans-serif !important;
+}
+
+.blog-img img {
+  width: 100%;
+}
+
+.border-box .wrap-box {
+  text-align: left;
+}
+.border-box img {
+  display: block;
+  width: 34px;
+  margin-bottom: 15px;
+}
+
+footer {
+  background: #008a4b;
+  padding: 12px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+footer span {
+  color: #ffffff;
+}
+
+.tab-page, .detail-contents {
+  background-image: url("../img/footer-bg-img.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+  background-attachment: scroll;
+}
+
+.footer-shape {
+  width: 100%;
+  margin-top: -34px;
+  transform: scale(-1, -1);
+}
+
+.agri-tab .tab-content a {
+  text-align: left;
+}
+.agri-tab .tab-content span {
+  position: relative;
+  text-align: left;
+}
+.agri-tab .tab-content span:before {
+  content: "";
+  height: 3px;
+  width: 65px;
+  background: #008a4b;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+}/*# sourceMappingURL=custom.css.map */

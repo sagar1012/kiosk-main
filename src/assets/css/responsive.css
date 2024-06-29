@@ -1,0 +1,74 @@
+/*(  Media Queries  )*/
+@media(max-width:1440px) {
+    .banner-slider .carousel-caption {
+        left: 10%;
+        top: 25%;
+    }
+
+    .container-fluid {
+        padding-right: 150px;
+        padding-left: 150px;
+    }
+}
+
+@media(max-width:1365px) {
+    .container-fluid {
+        padding-right: 130px;
+        padding-left: 130px;
+    }
+}
+
+@media(max-width:1299px) {
+    .container-fluid {
+        padding-right: 100px;
+        padding-left: 100px;
+    }
+}
+
+@media(max-width:1199px) {
+    .container-fluid {
+        padding-right: 80px;
+        padding-left: 80px;
+    }
+}
+
+@media(max-width:1099px) {
+    .banner-slider .carousel-caption {
+        left: 30px;
+        top: 10%;
+    }
+
+}
+
+@media(max-width:992px) {
+    .banner-slider .carousel-caption {
+        width: 70%;
+    }
+}
+
+@media(max-width:768px) {
+    .container-fluid {
+        padding-right: 60px;
+        padding-left: 60px;
+    }
+}
+
+@media(max-width:600px) {
+    .banner-slider .carousel-caption {
+        left: 30px;
+        width: 90%;
+        top: 30px;
+    }
+    .container-fluid {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+    .banner-slider .carousel-caption h1 {
+        font-size: 26px;
+        line-height: 36px;
+    }
+}
+
+@media(max-width:480px) {}
+
+@media(max-width:320px) {}

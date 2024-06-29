@@ -1,0 +1,39 @@
+<section class="py-5 overflow-hidden">
+    <div class="container container-fluid">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="title-style">
+                    <div class="light-title">Details</div>
+                    <h3 class="text-capitalize">Agricultural details</h3>
+                </div>
+            </div>
+
+            <div *ngFor="let item of kioskData?.children;" class="col-md-3 col-sm-12 mt-5 wow fadeInRight"
+                data-wow-offset="200">
+                <div class="card home-card-3">
+                    <div class="blog-img position-relative">
+                        <a [routerLink]="['/sub-categories', id, item?.title]">
+                            <img class="img-fluid w-100" src="https://cloud-api.up.railway.app{{item?.image}}"
+                                alt="img">
+                        </a>
+                    </div>
+                    <div class="position-relative">
+                        <div class="icon-set">
+                            <a [routerLink]="['/sub-categories', id, item?.title]">
+                                <img class="img-fluid" src="assets/img/home-icons/Agriculture .png" alt="img">
+                            </a>
+                        </div>
+                        <div class="title-text">
+                            <a [routerLink]="['/sub-categories', id, item?.title]">
+                                <a>
+                                    <h6>{{item?.title}}</h6>
+                                </a>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

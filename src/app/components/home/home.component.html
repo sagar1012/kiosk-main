@@ -1,0 +1,47 @@
+<section class="overflow-hidden">
+    <img class="img-fluid w-100" src="assets/img/agri-marketing.png" alt="img">
+</section>
+<section class="container py-5 mb-5 overflow-hidden position-relative">
+    <div class="leaf-set">
+        <img class="img" src="assets/img/Leaf-5-1.png" alt="img">
+    </div>
+    <div class="food-set">
+        <img class="img" src="assets/img/zucchini-2.png" alt="img">
+    </div>
+    <div class="container-fluid mb-5">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="title-style">
+                    <div class="light-title">Agricultural</div>
+                    <h3 class="text-capitalize">Agricultural details</h3>
+                </div>
+            </div>
+            <div *ngFor="let item of kioskData;" class="col-md-4 col-sm-12 my-5 py-5 wow fadeInRight" data-wow-offset="200">
+                <div class="card home-card-4">
+                    <div class="blog-img position-relative">
+                        <a [routerLink]="['/category', item?._id]">
+                            <img class="img-fluid w-100" src="https://cloud-api.up.railway.app{{item?.image}}" alt="img">
+                        </a>
+                    </div>
+                    <div class="position-part-set">
+                        <div class="position-relative">
+                            <div class="icon-set">
+                                <a [routerLink]="['/category', item?._id]">
+                                    <img class="img-fluid" src="assets/img/home-icons/3.png" alt="img">
+                                </a>
+                            </div>
+                            <div class="title-text">
+                                <a [routerLink]="['/category', item?._id]">
+                                    <a>
+                                        <h6>{{item?.title}}</h6>
+                                    </a>
+                                </a>
+                                <span class="text-capitalize">{{item?.description}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
