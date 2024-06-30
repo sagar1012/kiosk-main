@@ -15,12 +15,20 @@
                     <div class="light-title">Agricultural</div>
                     <h3 class="text-capitalize">Agricultural details</h3>
                 </div>
+                <div class="position-absolute rounded" style="right: 0; margin-top: -53px; background: antiquewhite; padding: 5px;">
+                    <a href="https://nau.in/index" target="_blank" rel="noopener noreferrer" style="cursor: pointer; color: #008a4b;
+    font-size: 20px;">
+                        NAU Website
+                    </a>
+                </div>
             </div>
-            <div *ngFor="let item of kioskData;" class="col-md-4 col-sm-12 my-5 py-5 wow fadeInRight" data-wow-offset="200">
+            <div *ngFor="let item of kioskData;" class="col-md-4 col-sm-12 my-5 py-5 wow fadeInRight"
+                data-wow-offset="200">
                 <div class="card home-card-4">
                     <div class="blog-img position-relative">
                         <a [routerLink]="['/category', item?._id]">
-                            <img class="img-fluid w-100" src="https://cloud-api.up.railway.app{{item?.image}}" alt="img">
+                            <img class="img-fluid w-100" src="https://cloud-api.up.railway.app{{item?.image}}"
+                                alt="img">
                         </a>
                     </div>
                     <div class="position-part-set">

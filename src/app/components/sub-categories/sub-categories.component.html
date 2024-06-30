@@ -3,7 +3,7 @@
         <div class="row">
 
 
-            <div class="col-sm-12 text-center">
+            <div class="col-sm-12 text-center" *ngIf="!isDetailView">
                 <div class="title-style">
                     <div class="light-title">Agricultural</div>
                     <h3 class="text-capitalize">KIOSK Agricultural details</h3>
@@ -12,173 +12,69 @@
 
 
             <div class="col-sm-12 agri-tab">
-
                 <div class="d-flex align-items-start">
                     <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
                         aria-orientation="vertical">
-                        <a id="home-link" class="nav-link text-white wow fadeInUp w-50"
-                            style="background-color: black;">Home</a>
-
-                        <a class="nav-link active wow fadeInUp" data-wow-offset="50" id="v-pills-home-tab"
-                            data-tabid="v-pills-home" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button"
-                            role="tab" aria-controls="v-pills-home" aria-selected="true">Agriculture</a>
-                        <a class="nav-link wow fadeInUp" data-wow-offset="50" id="v-pills-profile-tab"
-                            data-tabid="v-pills-profile" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
-                            type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Crop
-                            Improvement
-                            and Biotechnology</a>
-                        <a class="nav-link wow fadeInUp" data-wow-offset="50" id="v-pills-messages-tab"
-                            data-tabid="v-pills-messages" data-bs-toggle="pill" data-bs-target="#v-pills-messages"
-                            type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Plant
-                            Protection</a>
-                        <a class="nav-link wow fadeInUp" data-wow-offset="50" id="v-pills-settings-tab"
-                            data-tabid="v-pills-settings" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
-                            type="button" role="tab" aria-controls="v-pills-settings"
-                            aria-selected="false">Horticulture</a>
-
-                        <a class="nav-link wow fadeInUp" data-wow-offset="50" id="v-pills-tabs" data-tabid="v-pills-5"
-                            data-bs-toggle="pill" data-bs-target="#v-pills-5" type="button" role="tab"
-                            aria-controls="v-pills-5" aria-selected="false">Forestry</a>
-
-                        <a class="nav-link wow fadeInUp" data-wow-offset="50" id="v-pills-6-tab" data-tabid="v-pills-6"
-                            data-bs-toggle="pill" data-bs-target="#v-pills-6" type="button" role="tab"
-                            aria-controls="v-pills-6" aria-selected="false">Agribusiness, Economics, Social
-                            science & ICT</a>
-
-                        <a class="nav-link wow fadeInUp" data-wow-offset="50" id="v-pills-7-tab" data-tabid="v-pills-7"
-                            data-bs-toggle="pill" data-bs-target="#v-pills-7" type="button" role="tab"
-                            aria-controls="v-pills-7" aria-selected="false">Veterinary Science</a>
-
-                        <a class="nav-link wow fadeInUp" data-wow-offset="50" id="v-pills-8-tab" data-tabid="v-pills-8"
-                            data-bs-toggle="pill" data-bs-target="#v-pills-8" type="button" role="tab"
-                            aria-controls="v-pills-8" aria-selected="false">Agricultural Engineering and Farm
-                            Machinery</a>
-
-                        <a class="nav-link wow fadeInUp" data-wow-offset="50" id="v-pills-9-tab" data-tabid="v-pills-9"
-                            data-bs-toggle="pill" data-bs-target="#v-pills-9" type="button" role="tab"
-                            aria-controls="v-pills-9" aria-selected="false">Agricultural Education</a>
+                        <a id="home-link" [routerLink]="['/home']" class="nav-link text-white wow fadeInUp"
+                            style="background-color: black; width: fit-content !important; cursor: pointer;">Home</a>
+                        <div *ngFor="let item of parentData; let i = index;">
+                            <a [ngClass]="{'active': selectedCategory == i}" class="nav-link wow fadeInUp"
+                                data-wow-offset="50" (click)="tabChange(i)" id="v-pills-home-tab"
+                                data-tabid="v-pills-home" data-bs-toggle="pill" data-bs-target="#v-pills-home"
+                                type="button" role="tab" aria-controls="v-pills-home"
+                                aria-selected="true">{{item?.title}}</a>
+                        </div>
                     </div>
-                    <div class="tab-content w-100 ms-3" id="v-pills-tabContent">
+                    <div class="tab-content w-100 ms-3" id="v-pills-tabContent" *ngIf="!isDetailView">
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                            aria-labelledby="v-pills-home-tab">
+                            <div class="row wow fadeInDown" data-wow-offset="200">
+                                <div *ngFor="let item of childData; let i = index;" class="col-md-4 col-sm-12 mb-5">
+                                    <div class="border-box py-4 px-3" (click)="onChildSelect(i)">
+                                        <div class="wrap-box">
+                                            <img src="./img/icon-1.png" alt="">
+                                            <a>
+                                                <span class="text-capitalize text-dark">
+                                                    {{item?.title}}
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content w-100 ms-3" id="v-pills-tabContent" *ngIf="isDetailView">
                         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                             aria-labelledby="v-pills-home-tab">
 
-                            <div class="row wow fadeInDown" data-wow-offset="200">
+                            <section class="overflow-hidden detail-contents position-relative">
+                                <div class="leaf-set">
+                                    <img class="img" src="assets/img/Leaf-5-1.png" alt="img">
+                                </div>
+                                <div class="food-set">
+                                    <img class="img" src="assets/img/zucchini-2.png" alt="img">
+                                </div>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12 text-center">
+                                            <div class="title-style">
+                                                <div class="light-title">Details</div>
+                                                <h3 class="text-capitalize">Agricultural details</h3>
+                                            </div>
+                                        </div>
 
-                                <div class="col-md-4 col-sm-12">
-                                    <div class="border-box py-4 px-3">
-                                        <div class="wrap-box">
-                                            <img src="./img/icon-1.png" alt="">
-                                            <a href="./detail-content.html">
-                                                <span class="text-capitalize text-dark">
-                                                    History of Scientific Agriculture in India
-                                                </span>
-                                            </a>
+                                        <div class="col-md-12">
+                                            <p>
+                                                {{detailDecs}}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 col-sm-12">
-                                    <div class="border-box py-4 px-3">
-                                        <div class="wrap-box">
-                                            <img src="./img/icon-1.png" alt="">
-                                            <a href="./detail-content.html">
-                                                <span class="text-capitalize text-dark">
-                                                    Agro-climatic zones of India and Gujarat state
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-12">
-                                    <div class="border-box py-4 px-3">
-                                        <div class="wrap-box">
-                                            <img src="./img/icon-1.png" alt="">
-                                            <a href="./detail-content.html">
-                                                <span class="text-capitalize text-dark">
-                                                    Principles of Agronomy
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="row mt-4 wow fadeInRight" data-wow-offset="200">
-
-                                <div class="col-md-4 col-sm-12">
-                                    <div class="border-box py-4 px-3">
-                                        <div class="wrap-box">
-                                            <img src="./img/icon-1.png" alt="">
-                                            <a href="./detail-content.html">
-                                                <span class="text-capitalize text-dark">
-                                                    Modern concept of Agronomy
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4 col-sm-12">
-                                    <div class="border-box py-4 px-3">
-                                        <div class="wrap-box">
-                                            <img src="./img/icon-1.png" alt="">
-                                            <a href="./detail-content.html">
-                                                <span class="text-capitalize text-dark">
-                                                    Weeds (Identification and management)
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-12">
-                                    <div class="border-box py-4 px-3">
-                                        <div class="wrap-box">
-                                            <img src="./img/icon-1.png" alt="">
-                                            <a href="./detail-content.html">
-                                                <span class="text-capitalize text-dark">
-                                                    Package of practices for major crop of South Gujarat
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="row mt-4 wow fadeInUp" data-wow-offset="200">
-                                <div class="col-md-4 col-sm-12">
-                                    <div class="border-box py-4 px-3">
-                                        <div class="wrap-box">
-                                            <img src="./img/icon-1.png" alt="">
-                                            <a href="./detail-content.html">
-                                                <span class="text-capitalize text-dark">
-                                                    Cropping System Research
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-12">
-                                    <div class="border-box py-4 px-3">
-                                        <div class="wrap-box">
-                                            <img src="./img/icon-1.png" alt="">
-                                            <a href="./detail-content.html">
-                                                <span class="text-capitalize text-dark">
-                                                    Research Recommendation
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </section>
 
                         </div>
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
-                            aria-labelledby="v-pills-profile-tab">...2</div>
-                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
-                            aria-labelledby="v-pills-messages-tab">..3.</div>
-                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
-                            aria-labelledby="v-pills-settings-tab">...</div>
                     </div>
                 </div>
 

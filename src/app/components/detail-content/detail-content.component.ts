@@ -5,32 +5,36 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-category',
+  selector: 'app-detail-content',
   standalone: true,
   imports: [HttpClientModule, ReactiveFormsModule, CommonModule, RouterModule],
-  templateUrl: './category.component.html',
-  styleUrl: './category.component.scss'
+  templateUrl: './detail-content.component.html',
+  styleUrl: './detail-content.component.scss'
 })
-export class CategoryComponent implements OnInit {
+export class DetailContentComponent implements OnInit {
 
   apiUrl: any = 'https://cloud-api.up.railway.app/';
-  
   kioskData: any = [];
   id: string | null = null;
+  detailData: any;
 
-  constructor(private route: ActivatedRoute,private http: HttpClient) {  }
+  constructor(private route: ActivatedRoute, private http: HttpClient) {
+
+  }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     this.getMenuDetail();
-
   }
 
   getMenuDetail() {
-    this.http.get(`${this.apiUrl}kioskmenu`).subscribe((res:any) => {
-      this.kioskData = res.find((kiosk:any) => kiosk._id === this.id);
-      console.log(this.kioskData?.children);
-       
+    this.http.get(`${this.apiUrl}kioskmenu`).subscribe((res: any) => {
+      this.kioskData = res.find((kiosk: any) => kiosk._id === this.id);
+      if(this.kioskData?.children?.length){
+        
+      }
     });
   }
+
+
 }
