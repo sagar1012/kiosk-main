@@ -38,13 +38,13 @@
                     </div>
                     <div class="col-md-6 col-sm-6">
                         <div class="val-cls">
-                            20°57'
+                            {{weatherData?.latitude}}
                         </div>
                         <div class="val-cls">
-                            72°54'
+                            {{weatherData?.longitude}}
                         </div>
                         <div class="val-cls">
-                            11.89 m.
+                            {{weatherData?.altitude}}
                         </div>
                     </div>
                     <!-- <hr> -->
@@ -85,34 +85,34 @@
                     </div>
                     <div class="col-md-6">
                         <div class="val-cls">
-                            27.1 ℃
+                            {{weatherData?.maxTemperature}}
                         </div>
                         <div class="val-cls">
-                            24.0 ℃
+                            {{weatherData?.minTemperature}}
                         </div>
                         <div class="val-cls">
-                            92 %
+                            {{weatherData?.relHumidityMorning}}
                         </div>
                         <div class="val-cls">
-                            100 %
+                            {{weatherData?.relHumidityAfternoon}}
                         </div>
                         <div class="val-cls">
-                            6.8 km/hr.
+                            {{weatherData?.windSpeed}}
                         </div>
                         <div class="val-cls">
-                            0.0 hr
+                            {{weatherData?.brightSunshineHours}}
                         </div>
                         <div class="val-cls">
-                            OF
+                            {{weatherData?.evaporation}}
                         </div>
                         <div class="val-cls">
-                            83.0 mm
+                            {{weatherData?.rainFall}}
                         </div>
                         <div class="val-cls">
-                            11
+                            {{weatherData?.rainyDays}}
                         </div>
                         <div class="val-cls">
-                            321.0 mm
+                            {{weatherData?.cumulativeRain}}
                         </div>
                     </div>
                 </div>
